@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSON对象</title>
+</head>
+<body>
+<!--
+1. JSON.stringify(obj/arr)
+  * js对象(数组)转换为json对象(数组)
+2. JSON.parse(json)
+  * json对象(数组)转换为js对象(数组)
+
+-->
+<script type="text/javascript">
+  var obj = {username:"tom",age:13};
+  //转化为json格式的字符串
+  json=JSON.stringify(obj);
+  //alert(obj);
+  //转化为原生的对象或数组
+  obj = JSON.parse(json);
+  console.log(typeof obj);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <p ref="content">vue is good</p>
+    <button @click="getV">test</button>
+    <p v-cloak>{{msg}}</p>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    alert('---');
+    new Vue({
+        el:"#demo",
+        data:{
+            msg:'蘑菇太狂'
+        },
+        methods:{
+            getV(){
+                alert(this.$refs.content.innerHTML)
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+    <p>{{date}}</p>
+    <p>{{date|momentFilter}}</p>
+    <p>{{date|momentFilter('YYYY-MM-DD')}}</p>
+    <p>{{date|momentFilter('HH:mm:ss')}}</p>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.js"></script>
+<script>
+    Vue.filter('momentFilter',function(value,format='YYYY-MM-DD HH:mm:ss'){
+        return moment(value).format(format);
+    });
+    new Vue({
+        el:'#demo',
+        data:{
+            date:new Date()
+        }
+    })
+</script>
+</html>

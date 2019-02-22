@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .xxx-enter-active, .xxx-leave-active {
+            transition: opacity 1s;
+        }
+        .xxx-enter, .xxx-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <button @click="isShow=!isShow">toggle</button>
+    <transition name="xxx">
+        <p v-show="isShow">hello</p>
+    </transition>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#demo",
+        data(){
+            return {
+                isShow:true
+            }
+        }
+    })
+</script>
+</html>

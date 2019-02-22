@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+        <tr v-for="(p,index) in persons" :key="index">
+            <td>{{p.name}}</td>
+            <td>{{p.age}}</td>
+            <td>
+                <button @click="deleteP(index)">删除</button>
+                <button @click="updateP(index,{name:'zhaoliu',age:55})">更新</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+    new Vue({
+        el:"#demo",
+        data:{
+            persons:[
+                {
+                    name:"zhangsan",
+                    age:22
+                },
+                {
+                    name:"lisi",
+                    age:33
+                },
+                {
+                    name:"wangwu",
+                    age:44
+                }
+            ]
+        },
+        methods:{
+            deleteP(index){
+                this.persons.splice(index,1);
+            },
+            updateP(index,newP){
+                this.persons.splice(index,1,newP);
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aClass{
+            color:red;
+        }
+        .bClass{
+            color:blue;
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <p :class="a">vue is good</p>
+    <p :class="{aClass:isA,bClass:isB}">vue is very well</p>
+    <p :style="{fontSize:fontsize+'px'}">vue is good good good</p>
+    <button @click="updateDemo">更新</button>
+</div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#demo",
+        data:{
+            a:'aClass',
+            isA:true,
+            isB:false,
+            fontsize:30
+        },
+        methods:{
+            updateDemo(){
+                this.a = 'bClass';
+                this.isA = false;
+                this.isB = true;
+                this.fontsize = 50
+            }
+        }
+    })
+</script>
+</html>
